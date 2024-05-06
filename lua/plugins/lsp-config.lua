@@ -1,7 +1,7 @@
 return {
     {
         "williamboman/mason.nvim",
-        ensure_installed = { "black", "debugpy", "lua_ls", "pyright", "mypy"},
+        ensure_installed = { "black", "debugpy", "lua_ls", "stylua", "pyright", "mypy", "beautysh" },
         config = function()
             require("mason").setup()
         end
@@ -19,7 +19,7 @@ return {
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({})
             lspconfig.pyright.setup({
-                filetypes = {"python"},
+                filetypes = { "python" },
             })
             -- use :Mason and :MasonInfo to check for updates
             -- use :LspInfo to check connection between buffer and server
