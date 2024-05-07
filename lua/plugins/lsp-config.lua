@@ -1,7 +1,7 @@
 return {
     {
         "williamboman/mason.nvim",
-        ensure_installed = { "black", "debugpy", "lua_ls", "stylua", "pyright", "mypy", "beautysh" },
+        ensure_installed = { "black", "debugpy", "lua_ls", "pyright", "mypy"},
         config = function()
             require("mason").setup()
         end
@@ -19,7 +19,7 @@ return {
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({})
             lspconfig.pyright.setup({
-                filetypes = { "python" },
+                filetypes = {"python"},
             })
             -- use :Mason and :MasonInfo to check for updates
             -- use :LspInfo to check connection between buffer and server
@@ -27,7 +27,8 @@ return {
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
             vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
         end
     }
 }
