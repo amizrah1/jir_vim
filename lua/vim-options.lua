@@ -28,3 +28,7 @@ vim.keymap.set('v', '<A-S-Up>',   ":m '<-2<CR>gv=gv")
 
 -- press | to turn off the last search highlight
 vim.keymap.set('n', '|', ':nohlsearch<CR>', {})
+
+-- open the information window
+vim.keymap.set('n', '<C-I>', ":SidebarNvimToggle<CR>")
+

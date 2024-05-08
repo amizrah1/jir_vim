@@ -10,7 +10,7 @@ return {
         ensure_installed = { "black", "debugpy", "lua_ls", "pyright", "mypy" },
         config = function()
             require("mason-lspconfig").setup({
-        })
+            })
         end
     },
     {
