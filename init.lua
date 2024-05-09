@@ -1,5 +1,10 @@
 -- based on https://www.youtube.com/watch?v=zHTeCSVAFNY&t=390s&ab_channel=typecraft
 
+
+-- fix due to setHDK wrap git command with something else
+vim.env.PATH = '/usr/intel/bin:' .. vim.env.PATH
+
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({

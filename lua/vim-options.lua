@@ -12,6 +12,7 @@ vim.cmd("set ignorecase")
 vim.cmd("set smartcase")
 vim.g.mapleader = " "
 
+
 -- due to nvim issue gg not going to first char in line
 vim.keymap.set('n', 'gg', "0gg")
 
@@ -24,6 +25,7 @@ vim.keymap.set('n', '<A-Down>', ':bnext<CR>')
 
 -- copy and paste from clipboard
 vim.keymap.set({'n', 'v'}, '<leader>sy', '"+y')
+vim.keymap.set({'v'}, '<C-C>', '"+y')
 vim.keymap.set('n', '<leader>sp', '"+p')
 
 -- change buffer size using CTRL+"+"
