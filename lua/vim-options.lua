@@ -5,8 +5,11 @@ vim.cmd("set softtabstop=0")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set ruler")
 vim.cmd("set number")
+vim.cmd("set relativenumber")
 vim.cmd("set noswapfile")
 vim.cmd("set nowrap")
+vim.cmd("set ignorecase")
+vim.cmd("set smartcase")
 vim.g.mapleader = " "
 
 -- Pressing \\ shows the current directory
