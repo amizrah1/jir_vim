@@ -7,9 +7,10 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        ensure_installed = { "black", "debugpy", "lua_ls", "pyright", "mypy" },
+        "williamboman/mason.nvim",
         config = function()
             require("mason-lspconfig").setup({
+                ensure_installed = { "black", "debugpy", "lua_ls", "pyright", "mypy" },
             })
         end
     },
