@@ -16,8 +16,8 @@ return {
                 },
             },
         }
-        vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>', {})
-        vim.keymap.set('n', '<leader>nf', ':Neotree filesystem reveal left<CR>', {})
-        vim.keymap.set('n', '<leader>nb', ':Neotree buffers reveal left<CR>', {})
+        vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>', { desc = 'toggle neotree' })
+        vim.keymap.set('n', '<leader>nf', ':Neotree filesystem reveal left<CR>', { desc = 'open filesystem tree' })
+        vim.keymap.set('n', '<leader>nb', ':Neotree buffers reveal left<CR>', { desc = 'open list of buffers' })
     end
 }
