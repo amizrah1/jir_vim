@@ -15,6 +15,7 @@ return {
             dap.listeners.before.event_exited["dapui_config"] = function()
                 dapui.close()
             end
+--            dap.set_log_level = 'DEBUG'
             vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
             vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
             vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)

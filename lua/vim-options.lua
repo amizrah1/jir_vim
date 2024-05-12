@@ -16,6 +16,9 @@ vim.g.mapleader = " "
 -- due to nvim issue gg not going to first char in line
 vim.keymap.set('n', 'gg', "0gg")
 
+--vim.keymap.set('n', '<Home>', '0')
+--vim.keymap.set('n', '<End>', '$')
+
 -- Pressing \\ shows the current directory
 vim.keymap.set('c', '\\\\', "<C-R>=expand('%:p:h').'/'<CR>")
 
