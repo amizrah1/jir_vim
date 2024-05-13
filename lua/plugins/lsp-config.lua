@@ -7,15 +7,22 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+        },
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = { "black", "debugpy", "lua-language-server", "pyright", "mypy" },
+                opt = { automatic_installation = true, }
             })
         end
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "williamboman/mason.nvim",
+        },
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
