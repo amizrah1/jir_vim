@@ -1,5 +1,10 @@
 return {
     "nvimtools/none-ls.nvim",
+    dependencies = {
+        "williamboman/mason.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "neovim/nvim-lspconfig",
+    },
     ft = { "python" },
     opts = function()
         local null_ls = require("null-ls")

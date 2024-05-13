@@ -6,15 +6,25 @@ return {
         end
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
         dependencies = {
             "williamboman/mason.nvim",
         },
         config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = { "pyright" },
-                opt = { automatic_installation = true, }
+            require("mason-tool-installer").setup({
+                ensure_installed = { "lua-language-server", "black", "debugpy", "mypy", "pyright" }
             })
+        end,
+    },
+
+    {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+        config = function()
+            require("mason-lspconfig").setup({})
         end
     },
     {
@@ -51,12 +61,4 @@ return {
             vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'clean format current buffer' })
         end
     },
-    {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        config = function()
-            require("mason-tool-installer").setup({
-                ensure_installed = { "lua-language-server", "black", "debugpy", "mypy" }
-            })
-        end,
-    },
-  }
+}
