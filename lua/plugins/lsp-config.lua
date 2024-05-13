@@ -12,7 +12,7 @@ return {
         },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "black", "debugpy", "lua-language-server", "pyright", "mypy" },
+                ensure_installed = { "pyright" },
                 opt = { automatic_installation = true, }
             })
         end
@@ -50,5 +50,13 @@ return {
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'choose code action for current warning' })
             vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'clean format current buffer' })
         end
-    }
-}
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        config = function()
+            require("mason-tool-installer").setup({
+                ensure_installed = { "lua-language-server", "black", "debugpy", "mypy" }
+            })
+        end,
+    },
+  }
