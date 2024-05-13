@@ -12,6 +12,10 @@ if http_proxy == vim.NIL then
     vim.fn.setenv("no_proxy", ".intel.com,localhost,127.0.0.0/8,10.0.0.0/8,172.16.0.0/20,192.168.0.0/16")
 end
 
+
+require("vim-options")
+
+-- Lazy plugin - should be moved to a different file
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -25,7 +29,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("vim-options")
 require("lazy").setup("plugins", {
     import = "plugins",
     change_detection = {
