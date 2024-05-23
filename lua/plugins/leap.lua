@@ -8,3 +8,7 @@ return {
     },
     lazy = false,
 }
+
+
+
+-- Initiate the search in the forward (s) or backward (S) direction, or in the other windows (gs). (Note: you can search bidirectionally in the current window, or even in the whole tab page, if you are okay with the trade-offs.)

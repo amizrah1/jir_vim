@@ -47,3 +47,6 @@ vim.keymap.set('n', '|', ':nohlsearch<CR>', { desc = 'turn off search highlight'
 -- open the information window
 vim.keymap.set('n', '<C-I>', ":SidebarNvimToggle<CR>", { desc = 'toggle SideBar Info' })
 
+-- toggle spell check on comments only
+vim.api.nvim_set_keymap('n', '<F9>', ':set spell!<CR>', { desc = 'toggle spell check', noremap = true, silent = true })
+
