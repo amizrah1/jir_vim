@@ -48,5 +48,7 @@ vim.keymap.set('n', '|', ':nohlsearch<CR>', { desc = 'turn off search highlight'
 vim.keymap.set('n', '<C-I>', ":SidebarNvimToggle<CR>", { desc = 'toggle SideBar Info' })
 
 -- toggle spell check on comments only
-vim.api.nvim_set_keymap('n', '<F9>', ':set spell!<CR>', { desc = 'toggle spell check', noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<F9>',   ':set spell!<CR>', { desc = 'toggle spell check', noremap = true, silent = true })
 
+-- toggle precognition - -add line below text with hints where to jump to 
+vim.keymap.set('n', '<F9>', function() require("precognition").toggle() end, { desc = 'toggle precognition', noremap = true, silent = true })

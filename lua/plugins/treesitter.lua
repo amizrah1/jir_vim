@@ -5,9 +5,9 @@ return {
         local config = require("nvim-treesitter.configs")
         config.setup({
             auto_install = true,
-            ensure_installed = {"lua", "verilog", "python"},
+            ensure_installed = { "lua", "verilog", "python" },
             highlight = { enable = true },
-            ident = { enable = true },
+            indent = { enable = true },
         })
     end
 }
