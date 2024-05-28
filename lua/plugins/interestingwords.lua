@@ -1,5 +1,6 @@
 return {
     "Mr-LLLLL/interestingwords.nvim",
+    event = "VeryLazy",
     config = function()
         require("interestingwords").setup {
             colors = { '#aeee00', '#ff0000', '#0000ff', '#b88823', '#ffa724', '#ff2c4b' },

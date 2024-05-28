@@ -1,5 +1,6 @@
 return {
     'dense-analysis/ale',
+    event = "VeryLazy",
     config = function()
         -- Configuration goes here.
         local g = vim.g
