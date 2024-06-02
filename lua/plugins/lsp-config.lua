@@ -53,12 +53,12 @@ return {
             })
             -- use :Mason and :MasonInfo to check for updates
             -- use :LspInfo to check connection between buffer and server
-            vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, { desc = 'Hover' })
-            vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, { desc = 'go to declaration' })
-            vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'go to definition' })
-            vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { desc = 'go to implementation' })
+            vim.keymap.set('n', '<leader>cK', vim.lsp.buf.hover, { desc = 'Hover' })
+            vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { desc = 'go to declaration' })
+            vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { desc = 'go to definition' })
+            vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, { desc = 'go to implementation' })
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'choose code action for current warning' })
-            vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'clean format current buffer' })
+            vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, { desc = 'clean format current buffer' })
         end
     },
 }

@@ -1,7 +1,8 @@
 -- based on https://www.youtube.com/watch?v=zHTeCSVAFNY&t=390s&ab_channel=typecraft
 
 -- fix due to setHDK wrap git command with script
-vim.env.PATH = '/usr/intel/pkgs/nodejs/18.13.0/bin:/usr/intel/pkgs/python3/3.11.1/bin:/usr/intel/bin' .. vim.env.PATH
+vim.env.PATH = '/usr/intel/pkgs/gcc/12.2.0/bin /usr/intel/pkgs/nodejs/18.13.0/bin:/usr/intel/pkgs/python3/3.11.1/bin:/usr/intel/bin' .. vim.env.PATH
+vim.fn.setenv('CFLAGS',"-std=c99")
 
 -- setting proxy if not defined by user
 local http_proxy = vim.fn.getenv('HTTP_PROXY')
@@ -15,5 +16,4 @@ end
 
 require("vim-options")
 require("lazy_conf")
-
 

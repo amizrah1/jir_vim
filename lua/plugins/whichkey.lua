@@ -4,7 +4,13 @@ return {
     config = function()
         vim.o.timeout = true
         vim.o.timeoutlen = 300
-        require("which-key").setup {
-        }
+        local whichkey = require("which-key")
+        whichkey.register({
+            c = { name = "Code operattions" },
+            f = { name = "Telescope" },
+            n = { name = "Neotree" },
+            s = { name = "System Clipboard" },
+        }, { prefix = "<leader>" })
     end,
 }
+

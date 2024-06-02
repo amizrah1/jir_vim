@@ -2,13 +2,11 @@ return {
     'dense-analysis/ale',
     event = "VeryLazy",
     config = function()
-        -- Configuration goes here.
-        local g = vim.g
-
-        g.ale_ruby_rubocop_auto_correct_all = 1
-
-        g.ale_linters = {
+        vim.g.ale_linters = {
             verilog = { 'verilog' }
+        }
+        vim.g.ale_fixers = {
+            verilog = { 'verilator' }
         }
     end
 }

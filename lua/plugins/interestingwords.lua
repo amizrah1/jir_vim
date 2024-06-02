@@ -8,8 +8,8 @@ return {
             search_count = true,
             navigation = true,
             scroll_center = true,
-            --search_key = "ms",
-            --cancel_search_key = "mx",
+            search_key = "<Bslash>",
+            cancel_search_key = "|",
             color_key = "mm",
             cancel_color_key = "mc",
         }

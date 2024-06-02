@@ -10,6 +10,7 @@ return {
     opts = function()
         local null_ls = require("null-ls")
         null_ls.setup({
+            temp_dir = "/tmp/amizrah1/",
             sources = {
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.black,
