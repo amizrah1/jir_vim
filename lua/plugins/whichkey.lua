@@ -9,6 +9,7 @@ return {
             c = { name = "Code operattions" },
             f = { name = "Telescope" },
             n = { name = "Neotree" },
+            d = { name = "Debug options" },
             s = { name = "System Clipboard" },
         }, { prefix = "<leader>" })
     end,

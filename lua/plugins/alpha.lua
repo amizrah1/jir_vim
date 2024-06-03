@@ -19,7 +19,7 @@ return {
 
         -- Set menu
         dashboard.section.buttons.val = {
-            dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
+            dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("i", "  > open init file", ":e ~/.config/nvim/init.lua <CR>"),
             dashboard.button("v", "  > open vim-options file", ":e ~/.config/nvim/lua/vim-options.lua <CR>"),
             dashboard.button("p", "  > open plugins directory", ":e ~/.config/nvim/lua/plugins <CR>"),
