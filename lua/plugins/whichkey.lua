@@ -1,6 +1,5 @@
 return {
     "folke/which-key.nvim",
-    event = "VeryLazy",
     config = function()
         vim.o.timeout = true
         vim.o.timeoutlen = 300
@@ -11,6 +10,7 @@ return {
             n = { name = "Neotree" },
             d = { name = "Debug options" },
             s = { name = "System Clipboard" },
+            p = { name = "CoPilot" },
         }, { prefix = "<leader>" })
     end,
 }

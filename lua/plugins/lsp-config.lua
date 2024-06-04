@@ -39,6 +39,7 @@ return {
             require("neodev").setup({})
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
+                filetypes = { "lua" },
                 settings = {
                     Lua = {
                         completion = {

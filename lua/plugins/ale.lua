@@ -1,6 +1,6 @@
 return {
     'dense-analysis/ale',
-    event = "VeryLazy",
+    filetype = {'verilog', 'systemverilog'},
     config = function()
         vim.g.ale_linters = {
             verilog = { 'verilog' }

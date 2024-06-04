@@ -1,6 +1,6 @@
 return {
     "folke/neodev.nvim",
-    event = "VeryLazy",
+    filetypes = { "lua" },
     priority = 1001,
     opts = {}
 }
