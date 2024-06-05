@@ -22,6 +22,7 @@ return {
             dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("i", "  > open init file", ":e ~/.config/nvim/init.lua <CR>"),
             dashboard.button("v", "  > open vim-options file", ":e ~/.config/nvim/lua/vim-options.lua <CR>"),
+            dashboard.button("c", "  > open Co-Pilot file", ":e ~/wa/tools/nvim/copilot_scratchpad.py <CR>"),
             dashboard.button("p", "  > open plugins directory", ":e ~/.config/nvim/lua/plugins <CR>"),
             dashboard.button("f", "  > Find file", ":Telescope find_files<CR>"),
             dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
