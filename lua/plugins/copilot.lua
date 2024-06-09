@@ -3,7 +3,7 @@ return {
     config = function()
         vim.api.nvim_create_autocmd('VimEnter', { -- nothing should be enbled by default for better performance
             callback = function()
-                vim.cmd('Copilot disable')
+--                vim.cmd('Copilot disable')
             end
         })
         vim.keymap.set('n', '<leader>ps', ':Copilot status<CR>',  { desc = 'Get Copilot Status' })
