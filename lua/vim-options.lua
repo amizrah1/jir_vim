@@ -33,4 +33,3 @@ vim.keymap.set('v', '<A-S-Up>',   ":m '<-2<CR>gv=gv", { desc = 'move current sel
 vim.keymap.set('n', '|', ':nohlsearch<CR>',           { desc = 'turn off search highlight' })
 vim.keymap.set('c', '<Bslash><Bslash>', "<C-R>=expand('%:p:h').'/'<CR>", { desc = 'current file full path' })
 
-

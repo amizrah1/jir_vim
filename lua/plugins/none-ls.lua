@@ -8,8 +8,9 @@ return {
     },
     opts = function()
         local null_ls = require("null-ls")
+        local username = os.getenv("USER")
         null_ls.setup({
-            temp_dir = "/tmp/amizrah1/",
+            temp_dir = "/tmp/" .. username .. "/",
             sources = {
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.black,
