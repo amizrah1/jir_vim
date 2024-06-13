@@ -52,8 +52,6 @@ return {
                 capabilities = capabilities,
                 filetypes = { "python" },
             })
-            -- use :Mason and :MasonInfo to check for updates
-            -- use :LspInfo to check connection between buffer and server
             vim.keymap.set('n', '<leader>cK', vim.lsp.buf.hover, { desc = 'Hover' })
             vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { desc = 'go to declaration' })
             vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { desc = 'go to definition' })
