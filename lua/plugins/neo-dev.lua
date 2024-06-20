@@ -1,6 +1,6 @@
 return {
     "folke/neodev.nvim",
-    filetypes = { "lua" },
+    ft = { "lua" },
     priority = 1001,
     opts = {}
 }

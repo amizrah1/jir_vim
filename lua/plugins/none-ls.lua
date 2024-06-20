@@ -1,6 +1,6 @@
 return {
     "nvimtools/none-ls.nvim",
-    filetypes = { "python", "lua" },
+    ft = { "python", "lua" },
     dependencies = {
         "williamboman/mason.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",

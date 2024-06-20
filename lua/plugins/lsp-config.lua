@@ -39,7 +39,7 @@ return {
             require("neodev").setup({})
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
-                filetypes = { "lua" },
+                ft = { "lua" },
                 settings = {
                     Lua = {
                         completion = {
@@ -50,7 +50,7 @@ return {
             })
             lspconfig.pyright.setup({
                 capabilities = capabilities,
-                filetypes = { "python" },
+                ft = { "python" },
             })
             vim.keymap.set('n', '<leader>cK', vim.lsp.buf.hover, { desc = 'Hover' })
             vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { desc = 'go to declaration' })
