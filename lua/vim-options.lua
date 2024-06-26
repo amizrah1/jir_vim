@@ -12,6 +12,7 @@ vim.opt.relativenumber = true           --
 vim.opt.number         = true           -- Show line numbers
 vim.opt.wrap           = false          -- Lines longer than the width of the window won't be wrapped to the next line.
 vim.opt.ruler          = true           -- Show the line and column number of the cursor position, separated by acomma. 
+vim.opt.cursorline     = true           -- Highlight the screen line of the cursor with CursorLineNr color.
 
 -- Case sensitivity and Search
 vim.opt.ignorecase     = true           -- Ignore case in search.
@@ -32,4 +33,5 @@ vim.keymap.set('v', '<A-S-Down>', ":m '>+1<CR>gv=gv", { desc = 'move current sel
 vim.keymap.set('v', '<A-S-Up>',   ":m '<-2<CR>gv=gv", { desc = 'move current selection up' })
 vim.keymap.set('n', '|', ':nohlsearch<CR>',           { desc = 'turn off search highlight' })
 vim.keymap.set('c', '<Bslash><Bslash>', "<C-R>=expand('%:p:h').'/'<CR>", { desc = 'current file full path' })
+
 
