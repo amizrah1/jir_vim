@@ -6,6 +6,13 @@ return {
     },
     init = function()
         vim.g.barbar_auto_setup = false
+        -- autocommand to reorder BufferOrderByBufferNumber
+        vim.cmd [[
+            augroup barbar
+                autocmd!
+                autocmd BufEnter * silent! BufferOrderByBufferNumber
+            augroup END
+        ]]
     end,
     opts = {
         animation = false,
