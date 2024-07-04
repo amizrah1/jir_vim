@@ -19,7 +19,9 @@ vim.opt.ignorecase     = true           -- Ignore case in search.
 vim.opt.smartcase      = true           -- Override the ignorecase setting if the search patterns contains upper case characters.
 
 vim.keymap.set('n', 'gg', "0gg",                      { desc = 'jump to first char in first line' })
-vim.keymap.set('n', '<A-Up>',   ':bprev<CR>',         { desc = 'go to previous buffer' })
+vim.keymap.set('n', '<A-k>', ':bprev<CR>',            { desc = 'go to previous buffer' })
+vim.keymap.set('n', '<A-j>', ':bnext<CR>',            { desc = 'go to next buffer' })
+vim.keymap.set('n', '<A-Up>', ':bprev<CR>',           { desc = 'go to previous buffer' })
 vim.keymap.set('n', '<A-Down>', ':bnext<CR>',         { desc = 'go to next buffer' })
 vim.keymap.set('n', '<leader>sy', '"+y',              { desc = 'copy to system clipboard' })
 vim.keymap.set('v', '<leader>sy', '"+y',              { desc = 'copy to system clipboard' })
