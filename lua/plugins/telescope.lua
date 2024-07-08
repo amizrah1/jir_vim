@@ -7,6 +7,7 @@ return {
             vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'telescope search for files' })
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'telescope grep in files' })
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'telescope search in buffers' })
+            vim.keymap.set('n', '<leader>fc', '<cmd>Telescope colorscheme<cr>' , {desc = 'Colorscheme with preview'})
         end
     },
     {
@@ -18,7 +19,12 @@ return {
                         require("telescope.themes").get_dropdown {
                         }
                     }
-                }
+                },
+                pickers = {
+                    colorscheme = {
+                        enable_preview = true
+                    }
+                },
             }
             require("telescope").load_extension("ui-select")
         end

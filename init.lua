@@ -6,3 +6,5 @@ require("intel_proxy")
 require("vim-options")
 require("lazy_conf")
 
+vim.opt.termguicolors = true
+vim.cmd.colorscheme "melange"
