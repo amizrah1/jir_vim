@@ -8,3 +8,5 @@ require("lazy_conf")
 
 vim.opt.termguicolors = true
 vim.cmd.colorscheme "melange"
+
+

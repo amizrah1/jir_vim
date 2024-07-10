@@ -17,7 +17,6 @@ vim.opt.cursorline     = true           -- Highlight the screen line of the curs
 -- Case sensitivity and Search
 vim.opt.ignorecase     = true           -- Ignore case in search.
 vim.opt.smartcase      = true           -- Override the ignorecase setting if the search patterns contains upper case characters.
-vim.cmd("set formatoptions-=cro")       -- Stop newline continution of comments
 
 vim.keymap.set('n', 'gg', "0gg",                      { desc = 'jump to first char in first line' })
 vim.keymap.set('n', '<A-k>', ':bprev<CR>',            { desc = 'go to previous buffer' })
@@ -40,3 +39,15 @@ vim.keymap.set('n', '<leader>cg', ':lua vim.diagnostic.open_float()<CR>', { desc
 vim.keymap.set('c', '<Bslash><Bslash>', "<C-R>=expand('%:p:h').'/'<CR>", { desc = 'current file full path' })
 
 
+-- Function to remove 'cro' from formatoptions
+local function remove_formatoptions()
+  vim.opt.formatoptions:remove("c")
+  vim.opt.formatoptions:remove("r")
+  vim.opt.formatoptions:remove("o")
+end
+
+-- Autocommand to apply the function for all file types
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = remove_formatoptions,
+})
