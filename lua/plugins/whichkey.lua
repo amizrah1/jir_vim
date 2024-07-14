@@ -13,13 +13,13 @@ return {
                 v = { "j", "k" },
             },
         })
-        whichkey.register({
-            c = { name = "Code operattions" },
-            f = { name = "Telescope" },
-            n = { name = "Neotree" },
-            d = { name = "Debug options" },
-            s = { name = "System Clipboard" },
-            p = { name = "CoPilot" },
-        }, { prefix = "<leader>" })
+        whichkey.add({
+            { "<leader>c", group = "Code operation" },
+            { "<leader>f", group = "Telescope" },
+            { "<leader>n", group = "Neotree" },
+            { "<leader>d", group = "Debug options" },
+            { "<leader>s", group = "System Clipboard" },
+            { "<leader>p", group = "CoPilot" },
+        })
     end,
 }
