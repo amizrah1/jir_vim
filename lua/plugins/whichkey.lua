@@ -20,6 +20,7 @@ return {
             { "<leader>d", group = "Debug options" },
             { "<leader>s", group = "System Clipboard" },
             { "<leader>p", group = "CoPilot" },
+            { "<leader>sd", desc = "toggle non-active window shade" },
         })
     end,
 }
