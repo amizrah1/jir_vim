@@ -6,7 +6,11 @@ require("intel_proxy")
 require("vim-options")
 require("lazy_conf")
 
+-- Enable true color support
+if vim.fn.has("termguicolors") == 1 then
+  vim.opt.termguicolors = true
+end
+
 vim.opt.termguicolors = true
 vim.cmd.colorscheme "melange"
-
 
