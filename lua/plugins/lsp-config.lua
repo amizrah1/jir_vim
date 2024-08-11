@@ -12,7 +12,7 @@ return {
         },
         config = function()
             require("mason-tool-installer").setup({
-                ensure_installed = { "lua-language-server", "black", "debugpy", "mypy", "pyright" }
+                ensure_installed = { "lua-language-server", "black", "debugpy", "mypy", "pyright", "stylua" }
             })
         end,
     },
@@ -52,12 +52,13 @@ return {
                 capabilities = capabilities,
                 ft = { "python" },
             })
-            vim.keymap.set('n', '<leader>cK', vim.lsp.buf.hover, { desc = 'Hover' })
-            vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { desc = 'go to declaration' })
-            vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { desc = 'go to definition' })
-            vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, { desc = 'go to implementation' })
-            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'choose code action for current warning' })
-            vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, { desc = 'clean format current buffer' })
+            vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover,                      { desc = 'Hover' })
+            vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration,                { desc = 'go to code declaration' })
+            vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition,                 { desc = 'go to code definition' })
+            vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation,             { desc = 'go to code implementation' })
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,                { desc = 'choose code action for current warning' })
+            vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format,                     { desc = 'clean format current buffer' })
+            vim.keymap.set('n', '<leader>cg', ':lua vim.diagnostic.open_float()<CR>', { desc = 'show line diagnostics' })
         end
     },
 }

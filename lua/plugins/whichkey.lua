@@ -1,5 +1,8 @@
 return {
     "folke/which-key.nvim",
+    dependencies = {
+        "echasnovski/mini.icons"
+    },
     config = function()
         vim.o.timeout = true
         vim.o.timeoutlen = 300
@@ -11,7 +14,7 @@ return {
             { "<leader>d", group = "Debug options" },
             { "<leader>s", group = "System Clipboard" },
             { "<leader>p", group = "CoPilot" },
-            { "<leader>sd", desc = "toggle non-active window shade" },
+            { "<leader>w", desc  = "window shading" },
         })
     end,
 }
