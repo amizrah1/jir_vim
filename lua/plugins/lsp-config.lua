@@ -36,6 +36,9 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local whichkey = require("which-key")
+            whichkey.add({
+                { "<leader>l", group = "LSP Code operation" }})
             require("neodev").setup({})
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,

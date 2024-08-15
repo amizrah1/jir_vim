@@ -9,8 +9,8 @@ return {
 	config = function(_, opts)
 		local chat = require("CopilotChat")
 
-		local wk = require("which-key")
-		wk.add({
+		local whichkey = require("which-key")
+		whichkey.add({
 			{ "<leader>c", group = "+Copilot Chat" },
 			{ "<leader>ca", group = "Additional options" },
 			{ "<leader>cp", desc = "System prompt" },

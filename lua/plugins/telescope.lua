@@ -13,6 +13,9 @@ return {
     {
         'nvim-telescope/telescope-ui-select.nvim',
         config = function()
+            local whichkey = require("which-key")
+            whichkey.add({
+                { "<leader>f", group = "Telescope" }})
             local telescope = require("telescope")
             telescope.setup {
                 extensions = {

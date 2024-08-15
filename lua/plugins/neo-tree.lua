@@ -16,6 +16,9 @@ return {
                 },
             },
         }
+        local whichkey = require("which-key")
+        whichkey.add({
+            { "<leader>n", group = "Neotree" }})
         vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>', { desc = 'toggle neotree' })
         vim.keymap.set('n', '<leader>nf', ':Neotree filesystem reveal left<CR>', { desc = 'open filesystem tree' })
         vim.keymap.set('n', '<leader>nb', ':Neotree buffers reveal left<CR>', { desc = 'open list of buffers' })

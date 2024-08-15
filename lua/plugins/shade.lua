@@ -10,8 +10,8 @@ return {
                 toggle           = '<leader>ws',
             }
         })
-        local wk = require("which-key")
-        wk.add({
+        local whichkey = require("which-key")
+        whichkey.add({
             { "<leader>w", group = "Windows Shadding" },
             { "<leader>ws", desc = "Toggle Shadding" },
         })
