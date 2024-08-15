@@ -52,13 +52,13 @@ return {
                 capabilities = capabilities,
                 ft = { "python" },
             })
-            vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover,                      { desc = 'Hover' })
-            vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration,                { desc = 'go to code declaration' })
-            vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition,                 { desc = 'go to code definition' })
-            vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation,             { desc = 'go to code implementation' })
-            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,                { desc = 'choose code action for current warning' })
-            vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format,                     { desc = 'clean format current buffer' })
-            vim.keymap.set('n', '<leader>cg', ':lua vim.diagnostic.open_float()<CR>', { desc = 'show line diagnostics' })
+            vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover,                      { desc = 'Hover' })
+            vim.keymap.set('n', '<leader>lD', vim.lsp.buf.declaration,                { desc = 'go to code declaration' })
+            vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition,                 { desc = 'go to code definition' })
+            vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation,             { desc = 'go to code implementation' })
+            vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action,                { desc = 'choose code action for current warning' })
+            vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format,                     { desc = 'clean format current buffer' })
+            vim.keymap.set('n', '<leader>lg', ':lua vim.diagnostic.open_float()<CR>', { desc = 'show line diagnostics' })
         end
     },
 }

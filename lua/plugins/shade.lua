@@ -7,8 +7,13 @@ return {
             keys = {
                 brightness_up    = '<C-Up>',
                 brightness_down  = '<C-Down>',
-                toggle           = '<Leader>ws',
+                toggle           = '<leader>ws',
             }
+        })
+        local wk = require("which-key")
+        wk.add({
+            { "<leader>w", group = "Windows Shadding" },
+            { "<leader>ws", desc = "Toggle Shadding" },
         })
     end
 }

@@ -35,7 +35,7 @@ vim.keymap.set('v', '<A-S-Down>', ":m '>+1<CR>gv=gv", { desc = 'move current sel
 vim.keymap.set('v', '<A-S-Up>',   ":m '<-2<CR>gv=gv", { desc = 'move current selection up' })
 vim.keymap.set('n', '|', ':nohlsearch<CR>',           { desc = 'turn off search highlight' })
 vim.keymap.set('v', '<LeftRelease>', '"*ygv',         { desc = 'yank on mouse selection', noremap = true })
-vim.keymap.set('n', '<leader>cg', ':lua vim.diagnostic.open_float()<CR>', { desc = 'show line diagnostics' })
+vim.keymap.set('n', '<leader>lg', ':lua vim.diagnostic.open_float()<CR>', { desc = 'show line diagnostics' })
 vim.keymap.set('c', '<Bslash><Bslash>', "<C-R>=expand('%:p:h').'/'<CR>", { desc = 'current file full path' })
 
 
