@@ -1,5 +1,3 @@
--- Lazy plugin - should be moved to a different file
--- fix due to setHDK wrap git command with script
 local lazypath = "~amizrah1/.local/share/nvim/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
