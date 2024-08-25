@@ -11,7 +11,7 @@ return {
 
 		local whichkey = require("which-key")
 		whichkey.add({
-			{ "<leader>c", group = "Copilot Chat" },
+			{ "<leader>c", group = "Copilot Chat", mode = "vn" },
 			{ "<leader>ca", group = "Additional options" },
 			{ "<leader>cp", desc = "System prompt" },
 			{ "<leader>cs", desc = "Show selection" },

@@ -8,7 +8,7 @@ return {
         vim.o.timeoutlen = 300
         local whichkey = require("which-key")
         whichkey.add({
-            { "<leader>s", group = "System Clipboard" },
+            { "<leader>s", group = "System Clipboard", mode = "vn"},
         })
     end,
 }
