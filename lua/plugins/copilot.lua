@@ -6,9 +6,8 @@ return {
 --                vim.cmd('Copilot disable')
             end
         })
-        local whichkey = require("which-key")
-        whichkey.add({
-            { "<leader>c", group = "CoPilot" }})
+        local whichkey = require('which-key')
+        whichkey.add({{ '<leader>c', group = 'CoPilot' }})
         vim.keymap.set('n', '<leader>cz', ':Copilot status<CR>',  { desc = 'Get Copilot Status' })
         vim.keymap.set('n', '<leader>cx', ':Copilot disable<CR>', { desc = 'Disable Copilot Globally' })
         vim.keymap.set('n', '<leader>ce', ':Copilot enable<CR>',  { desc = 'Enable Copilot Globally' })

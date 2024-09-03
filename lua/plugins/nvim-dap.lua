@@ -1,24 +1,24 @@
 return {
     {
-        "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+        'rcarriga/nvim-dap-ui',
+        dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
         config = function()
-            local dap = require("dap")
-            local dapui = require("dapui")
+            local dap = require('dap')
+            local dapui = require('dapui')
             dapui.setup()
-            dap.listeners.after.event_initialized["dapui_config"] = function()
+            dap.listeners.after.event_initialized['dapui_config'] = function()
                 dapui.open()
             end
-            dap.listeners.before.event_terminated["dapui_config"] = function()
+            dap.listeners.before.event_terminated['dapui_config'] = function()
                 dapui.close()
             end
-            dap.listeners.before.event_exited["dapui_config"] = function()
+            dap.listeners.before.event_exited['dapui_config'] = function()
                 dapui.close()
             end
 --            dap.set_log_level = 'DEBUG'
             local whichkey = require("which-key")
             whichkey.add({
-                { "<leader>d", group = "Debug options" }})
+                { '<leader>d', group = 'Debug options' }})
             vim.keymap.set('n', '<F5>',             function() require('dap').continue() end, { desc = 'run script with debugger' } )
             vim.keymap.set('n', '<S-F5>',           function() require('dap').disconnect() end, { desc = 'while debugging stop run' })
             vim.keymap.set('n', '<leader>d<F5>',    function() require('dap').continue() end, { desc = 'run script with debugger' } )
@@ -34,18 +34,18 @@ return {
         end
     },
     {
-        "mfussenegger/nvim-dap",
+        'mfussenegger/nvim-dap',
     },
     {
-        "mfussenegger/nvim-dap-python",
-        ft = "python",
+        'mfussenegger/nvim-dap-python',
+        ft = 'python',
         dependencies = {
-            "mfussenegger/nvim-dap",
-            "rcarriga/nvim-dap-ui",
+            'mfussenegger/nvim-dap',
+            'rcarriga/nvim-dap-ui',
         },
         config = function()
-            local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-            require("dap-python").setup(path)
+            local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+            require('dap-python').setup(path)
         end,
     },
 }
