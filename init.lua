@@ -19,4 +19,4 @@ require('leap').init_highlight(true)
 vim.cmd [[highlight LeapLabelPrimary guifg=#ff0000 guibg=#000000]]
 vim.cmd [[highlight LeapLabelSecondary guifg=#00ff00 guibg=#000000]]
 --vim.cmd [[highlight LeapBackdrop guifg=#555555 guibg=#000000]]
-
+vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, { pattern = '*.v', command = 'set filetype=verilog', group = vim.api.nvim_create_augroup('VerilogFiletype', { clear = true }) })

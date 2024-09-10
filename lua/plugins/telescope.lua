@@ -3,7 +3,7 @@ return {
         'nvim-telescope/telescope.nvim', tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'nvim-telescope/telescope-live-grep-args.nvim'},
         config = function()
-            local builtin = require("telescope.builtin")
+            local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'telescope search for files' })
             -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'telescope grep in files' })
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'telescope search in buffers' })
@@ -13,14 +13,11 @@ return {
     {
         'nvim-telescope/telescope-ui-select.nvim',
         config = function()
-            local whichkey = require("which-key")
-            whichkey.add({
-                { "<leader>f", group = "Telescope" }})
-            local telescope = require("telescope")
+            local telescope = require('telescope')
             telescope.setup {
                 extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {
+                    ['ui-select'] = {
+                        require('telescope.themes').get_dropdown {
                         }
                     }
                 },
@@ -30,8 +27,13 @@ return {
                     }
                 },
             }
-            telescope.load_extension("ui-select")
-            telescope.load_extension("live_grep_args")
+            telescope.load_extension('ui-select')
+            telescope.load_extension('live_grep_args')
+
+            local wk = require('which-key')
+            wk.add({
+                { '<leader>f', group = 'Telescope' },
+            })
             vim.keymap.set('n', '<leader>fg', ':lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>', { desc = 'telescope grep in files' })
         end
     }
