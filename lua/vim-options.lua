@@ -8,11 +8,13 @@ vim.opt.softtabstop    = 0              -- Sets the length of soft tab in spaces
 
 -- General
 vim.opt.swapfile       = false          -- don't create swap files
-vim.opt.relativenumber = true           --
+vim.opt.relativenumber = true           -- Show line numbers relative to the cursor position.
 vim.opt.number         = true           -- Show line numbers
 vim.opt.wrap           = false          -- Lines longer than the width of the window won't be wrapped to the next line.
 vim.opt.ruler          = true           -- Show the line and column number of the cursor position, separated by acomma. 
 vim.opt.cursorline     = true           -- Highlight the screen line of the cursor with CursorLineNr color.
+vim.opt.winminheight   = 0              -- Minimum height of a window
+vim.opt.winminwidth    = 0              -- Minimum width of a window
 
 -- Case sensitivity and Search
 vim.opt.ignorecase     = true           -- Ignore case in search.
