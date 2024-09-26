@@ -2,6 +2,8 @@
 " Global
 "-------------------------------------------
 set nocompatible "enable GVIM advanced capabilities (must be the first option in the file)
+set runtimepath=/nfs/site/disks/home_user/amizrah1/.vim,$VIMRUNTIME
+let g:loaded_matchparen = 1
 
 "-------------------------------------------
 " Text, Tabs and Indent
@@ -107,6 +109,9 @@ set noswapfile                  " don't create swap files
 augroup syntax
 hi difftext guibg=cyan          " Change the background color for diff text in gvimdiff
 
+" Make sure blank lines don't display '~'
+autocmd VimEnter * hi NonText guifg=bg
+
 "-------------------------------------------
 " Syntax 
 "-------------------------------------------
@@ -160,6 +165,9 @@ augroup gzip
     autocmd BufNewFile,BufRead all_vi_files :map <CR> :exe "tag ". expand("<cword>")<CR><F4><F9>
 augroup END
 
+" When starting a new line from a commente4d line, don't start the line with a comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "-------------------------------------------
 " <Fx> Key Maps
 "-------------------------------------------
@@ -182,10 +190,12 @@ nnoremap <A-Down> :bnext<CR>
 " Copy to system clipboard
 nnoremap <leader>sy "+y
 vnoremap <leader>sy "+y
-vnoremap <C-C> "+y
 
 " Paste from system clipboard
 nnoremap <leader>sp "+p
+
+" Copy current file path to system clipboard
+nnoremap <leader>sf :let @*=expand('%:p')<CR>1<C-g>
 
 " Move current line down
 nnoremap <A-S-Down> :m .+1<CR>==
@@ -198,6 +208,7 @@ vnoremap <A-S-Down> :m '>+1<CR>gv=gv
 
 " Move current selection up
 vnoremap <A-S-Up> :m '<-2<CR>gv=gv
+
 " Pressing \\ shows the current directory
 cmap \\ <C-R>=expand("%:p:h")."/"<cr>
 
@@ -216,32 +227,14 @@ noremap + <C-W>+
 noremap _ <C-W>-
 
 " Map middle mouse button to paste in normal mode
-nnoremap <MiddleMouse> "*p
+nnoremap <MiddleMouse> "*P
 " Map middle mouse button to paste in insert mode
 inoremap <MiddleMouse> <C-R><C-O>*
 
-"" this function allow to serach for aligned addressed based on current address
-" maped to ALT-a
-nmap <A-a> :call Address_search()<bar>set hls<CR>
-
-function! Address_search()
-    let addr = expand("<cword>") 
-    let len = strlen(addr)
-    let second_char = strpart(addr, len-2, 1)
-
-    if ((second_char=="0") || (second_char=="1") || (second_char=="2") || (second_char=="3"))
-        let addr = substitute(addr, '[0-9a-f][0-9a-f]\>', '[0123].', "")
-    elseif ((second_char=="4") || (second_char=="5") || (second_char=="6") || (second_char=="7"))
-        let addr = substitute(addr, '[0-9a-f][0-9a-f]\>', '[4567].', "")
-    elseif ((second_char=="8") || (second_char=="9") || (second_char=="a") || (second_char=="b"))
-        let addr = substitute(addr, '[0-9a-f][0-9a-f]\>', '[89ab].', "")
-    elseif ((second_char=="c") || (second_char=="d") || (second_char=="e") || (second_char=="f"))
-        let addr = substitute(addr, '[0-9a-f][0-9a-f]\>', '[cdef].', "")
-    endif
-    let addr = substitute(addr, '\<0*', '', "") 
-    echo "Searching for align address = " addr
-    let @/=addr
-endfunction
+"-------------------------------------------
+" font Firacode Nerd Font
+"-------------------------------------------
+set guifont=FiraCode\ Nerd\ Font\ 14
 
 "-------------------------------------------
 " ColorScheme
