@@ -20,6 +20,10 @@ vim.opt.winminwidth    = 0              -- Minimum width of a window
 vim.opt.ignorecase     = true           -- Ignore case in search.
 vim.opt.smartcase      = true           -- Override the ignorecase setting if the search patterns contains upper case characters.
 
+vim.opt.clipboard      = 'unnamedplus'  -- Use system clipboard
+vim.opt.mouse          = 'a'            -- Enable mouse support     
+
+vim.keymap.set('n', '<middlemouse>','<leftmouse>"*p', { desc = 'enable paste on mouse cursor and not on nvim cursor' })
 vim.keymap.set('n', 'gg', "0gg",                      { desc = 'jump to first char in first line' })
 vim.keymap.set('n', '<A-k>', ':bprev<CR>',            { desc = 'go to previous buffer' })
 vim.keymap.set('n', '<A-j>', ':bnext<CR>',            { desc = 'go to next buffer' })

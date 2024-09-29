@@ -1,22 +1,22 @@
 "-------------------------------------------
 " Global
 "-------------------------------------------
-set nocompatible "enable GVIM advanced capabilities (must be the first option in the file)
+set nocompatible " enable GVIM advanced capabilities (must be the first option in the file)
 set runtimepath=$HOME/.vim,$VIMRUNTIME
 let g:loaded_matchparen = 1
 
 "-------------------------------------------
 " Text, Tabs and Indent
 "-------------------------------------------
-set shiftwidth=4       "Set the number of space characters inserted for indentation.
-set shiftround         "Round indent to multiple of 'shiftwidth'.
-set autoindent         "Keep indentation level from previous line
-set smartindent        "Do smart autoindenting when starting a new line.
-set expandtab          "Insert space characters whenever the <TAB> key is pressed.
-set tabstop=4          "Set the number of space characters that will be inserted when the <TAB> key is pressed
-set softtabstop=0      "Sets the length of soft tab in spaces
-set smarttab           "a <Tab> in front of a line inserts blanks according to 'shiftwidth'.
-set nofoldenable       "leave all folds opened
+set shiftwidth=4       " Set the number of space characters inserted for indentation.
+set shiftround         " Round indent to multiple of 'shiftwidth'.
+set autoindent         " Keep indentation level from previous line
+set smartindent        " Do smart autoindenting when starting a new line.
+set expandtab          " Insert space characters whenever the <TAB> key is pressed.
+set tabstop=4          " Set the number of space characters that will be inserted when the <TAB> key is pressed
+set softtabstop=0      " Sets the length of soft tab in spaces
+set smarttab           " a <Tab> in front of a line inserts blanks according to 'shiftwidth'.
+set nofoldenable       " leave all folds opened
 
 "-------------------------------------------
 " Display & GUI
@@ -40,17 +40,17 @@ set showmode           " shows in the bottom line which mode the editor is (Inse
 " Set extra options when running in GUI mode
 if has("gui_running")
     set t_Co=256
-    "tab label will be shown as: tail of file name (%t), max 50 characters (%-0.50t), show Modified flag (%M) as '+' or '-' in tab name. 
+    " tab label will be shown as: tail of file name (%t), max 50 characters (%-0.50t), show Modified flag (%M) as '+' or '-' in tab name. 
     set guitablabel=%-0.50t\ %M
-    set toolbar+=icons     "shown toolbar with icons
-    set guioptions+=a  "auto copy of selected text (into '+' register)
-    set guioptions+=g  "Colorize with grey menu items that are not active.
-    set guioptions+=m  "menu bar
-    set guioptions-=T  "remove toolbar
-    set guioptions+=b  "Bottom (horizontal) scrollbar is present.
-    set guioptions+=r  "right-hand scroll bar
-    set guioptions+=L  "Left-hand scrollbar is present when there is a vertically split window.
-    set guioptions+=e  "Add a nice tab toolbar when opening tabs
+    set toolbar+=icons " shown toolbar with icons
+    set guioptions+=a  " auto copy of selected text (into '+' register)
+    set guioptions+=g  " Colorize with grey menu items that are not active.
+    set guioptions+=m  " menu bar
+    set guioptions-=T  " remove toolbar
+    set guioptions+=b  " Bottom (horizontal) scrollbar is present.
+    set guioptions+=r  " right-hand scroll bar
+    set guioptions+=L  " Left-hand scrollbar is present when there is a vertically split window.
+    set guioptions+=e  " Add a nice tab toolbar when opening tabs
 endif
 
 "-------------------------------------------
@@ -90,11 +90,11 @@ let g:MultipleSearchTextColorSequence = "deeppink, Gold,  lime,  DeepSkyBlue, Fu
 "-------------------------------------------
 set wildmode=list:longest
 set wildignorecase
-set ignorecase  "ignore case in search
-set smartcase   "Override the 'ignorecase' option if the search pattern contains upper case characters.
-set hlsearch    "Highlight search results
-set wrapscan    "Searches wrap around the end of the file.
-set incsearch   "Set to interactive search : finds things as you type it
+set ignorecase  " ignore case in search
+set smartcase   " Override the 'ignorecase' option if the search pattern contains upper case characters.
+set hlsearch    " Highlight search results
+set wrapscan    " Searches wrap around the end of the file.
+set incsearch   " Set to interactive search : finds things as you type it
 
 "-------------------------------------------
 " General
@@ -118,52 +118,6 @@ autocmd VimEnter * hi NonText guifg=bg
 filetype on                     " Switch on filetype highlighting.
 syntax on                       " Switch on syntax highlighting.
 set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
-
-" automatic file detection
-augroup filetypedetect
-    au! BufRead,BufNewFile *.p    setfiletype perl
-    au! BufRead,BufNewFile *.hdl  setfiletype perl
-    au! BufRead,BufNewFile *.udf  setfiletype perl
-    au! BufRead,BufNewFile *.cc   setfiletype perl
-    au! BufRead,BufNewFile *.vhd  setfiletype vhdl
-    au! BufRead,BufNewFile *.asm  setfiletype ia64
-    au! BufRead,BufNewFile *.as   setfiletype ia64
-    au! BufRead,BufNewFile *.s    setfiletype ia64
-    au! BufRead,BufNewFile *.icf  setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.hier setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.sv   setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.svh  setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.v    setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.vh   setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.vs   setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.rdl  setfiletype verilog_systemverilog
-    au! BufRead,BufNewFile *.csh  setfiletype csh
-augroup END
-
-" Support editing of gzip-compressed files.
-augroup gzip 
-"    au! " Remove all gzip autocommands
-    " read: set binary mode before reading the file
-    " uncompress text in buffer after reading
-    " write: compress file after writing
-    " append: uncompress file, append, compress file
-    autocmd BufReadPre,FileReadPre *.gz set bin
-    autocmd BufReadPre,FileReadPre *.gz let ch_save = &ch|set ch=2
-    autocmd BufReadPost,FileReadPost *.gz '[,']!gunzip
-    autocmd BufReadPost,FileReadPost *.gz set nobin
-    autocmd BufReadPost,FileReadPost *.gz let &ch = ch_save|unlet ch_save
-    autocmd BufReadPost,FileReadPost *.gz execute ":doautocmd BufReadPost " . expand("%:r")
-
-    autocmd BufWritePost,FileWritePost *.gz !mv <afile> <afile>:r
-    autocmd BufWritePost,FileWritePost *.gz !gzip <afile>:r
-
-    autocmd FileAppendPre *.gz !gunzip <afile>
-    autocmd FileAppendPre *.gz !mv <afile>:r <afile>
-    autocmd FileAppendPost *.gz !mv <afile> <afile>:r
-    autocmd FileAppendPost *.gz !gzip <afile>:r
-    autocmd BufNewFile,BufRead all_vi_files :map <2-LeftMouse> :exe "tag ". expand("<cword>")<CR><F4><F9>
-    autocmd BufNewFile,BufRead all_vi_files :map <CR> :exe "tag ". expand("<cword>")<CR><F4><F9>
-augroup END
 
 " When starting a new line from a commente4d line, don't start the line with a comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -212,10 +166,10 @@ vnoremap <A-S-Up> :m '<-2<CR>gv=gv
 " Pressing \\ shows the current directory
 cmap \\ <C-R>=expand("%:p:h")."/"<cr>
 
-"press \ To highlight a word so it will be highlight as in searches (hls) without jumping to next search
+" press \ To highlight a word so it will be highlight as in searches (hls) without jumping to next search
 noremap <silent> \ :let @/='\<'.expand("<cword>").'\>'<bar>set hls<CR>
 
-"press | to turn off the last search highlight
+" press | to turn off the last search highlight
 map \| :nohlsearch<CR>
 
 " Fast window resizing with +/- keys (horizontal); / and * keys (vertical)
@@ -227,7 +181,7 @@ noremap + <C-W>+
 noremap _ <C-W>-
 
 " Map middle mouse button to paste in normal mode
-nnoremap <MiddleMouse> "*P
+nnoremap <MiddleMouse> <LeftMouse>"*P
 " Map middle mouse button to paste in insert mode
 inoremap <MiddleMouse> <C-R><C-O>*
 
