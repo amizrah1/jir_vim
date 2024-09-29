@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression/soc'
+let g:netrw_dirhist_1='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression'
+let g:netrw_dirhist_0='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression/soc/doa_c2saf_c244ur_ext_ave_model_compute0.list.1'
+let g:netrw_dirhist_9='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression/soc/doa_c2saf_c244ur_ext_ave_model_compute0.list.1/push_pop_ss'
+let g:netrw_dirhist_8='/nfs/site/disks/home_user/amizrah1/.vim/plugin'
+let g:netrw_dirhist_7='/nfs/site/disks/home_user/amizrah1/.vim'
+let g:netrw_dirhist_6='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression/soc/level0_c2saf_c244ur_ext_ave_model_compute0.list'
+let g:netrw_dirhist_5='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression'
+let g:netrw_dirhist_4='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression/soc/level0_c2saf_c244ur_ext_ave_model_compute0.list/push_pop_ss'
+let g:netrw_dirhist_3='/nfs/site/disks/ive_lnl_fpga_009/work/amizrah1/gmjames_esr/c2saf_emu-ptl-a0-main-23ww45a/regression/soc/level0_c2saf_c244ur_ext_ave_model_compute0.list'
