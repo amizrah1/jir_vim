@@ -3,7 +3,6 @@
 "-------------------------------------------
 set nocompatible " enable GVIM advanced capabilities (must be the first option in the file)
 set runtimepath=$HOME/.vim,$VIMRUNTIME
-let g:loaded_matchparen = 1
 
 "-------------------------------------------
 " Text, Tabs and Indent
@@ -103,6 +102,7 @@ set mouse=a                     " Enable the use of the mouse
 set wildmenu                    " enable autocomplete by pressing <Ctrl-Space>
 set history=700                 " Sets how many lines of history VIM has to remember
 set noautoread                  " Unset auto read when a file is changed from the outside (autoread takes lot of performance)
+set backspace=eol,start,indent       " Make backspace go over indents, end of lines and start of insert.
 set showmatch                   " When a bracket is inserted, briefly jump to the matching one
 set nobackup                    " don't create backup files 
 set noswapfile                  " don't create swap files
