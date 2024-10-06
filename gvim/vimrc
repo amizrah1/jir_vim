@@ -119,7 +119,7 @@ filetype on                     " Switch on filetype highlighting.
 syntax on                       " Switch on syntax highlighting.
 set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
 
-" When starting a new line from a commente4d line, don't start the line with a comment
+" When starting a new line from a commented line, don't start the line with a comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "-------------------------------------------

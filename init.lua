@@ -12,7 +12,7 @@ if vim.fn.has("termguicolors") == 1 then
 end
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme "melange"
+vim.cmd.colorscheme("melange")
 
 require('leap').init_highlight(true)
 
