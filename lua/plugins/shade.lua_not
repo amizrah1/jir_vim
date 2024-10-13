@@ -10,10 +10,10 @@ return {
                 toggle           = '<leader>ws',
             }
         })
-        local whichkey = require("which-key")
+        local whichkey = require('which-key')
         whichkey.add({
-            { "<leader>w", group = "Windows Shadding" },
-            { "<leader>ws", desc = "Toggle Shadding" },
+            { '<leader>w', group = 'Windows Shadding' },
+            { '<leader>ws', desc = 'Toggle Shadding' },
         })
     end
 }

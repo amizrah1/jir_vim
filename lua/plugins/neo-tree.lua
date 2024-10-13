@@ -1,5 +1,6 @@
 return {
     'nvim-neo-tree/neo-tree.nvim',
+    name = 'neo-tree',
     branch = 'v3.x',
     dependencies = {
         'nvim-lua/plenary.nvim',
@@ -16,9 +17,9 @@ return {
                 },
             },
         })
-        local whichkey = require("which-key")
+        local whichkey = require('which-key')
         whichkey.add({
-            { "<leader>n", group = "Neotree" }})
+            { '<leader>n', group = 'Neotree' }})
         vim.keymap.set('n', '<leader>nf', ':Neotree filesystem reveal left<CR>', { desc = 'open filesystem tree' })
         vim.keymap.set('n', '<leader>nb', ':Neotree buffers reveal left<CR>', { desc = 'open list of buffers' })
         vim.keymap.set('n', '<leader>nc', ':Neotree close <CR>', { desc = 'close neotree' })

@@ -1,5 +1,6 @@
 return {
     'dense-analysis/ale',
+    name = 'ale',
     ft = {'verilog', 'systemverilog'},
     config = function()
         vim.g.ale_linters = {

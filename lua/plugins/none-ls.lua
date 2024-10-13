@@ -1,5 +1,6 @@
 return {
     'nvimtools/none-ls.nvim',
+    name = 'none-ls',
     ft = { 'python', 'lua' },
     dependencies = {
         'williamboman/mason.nvim',

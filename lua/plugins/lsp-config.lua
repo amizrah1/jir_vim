@@ -1,59 +1,59 @@
 return {
     {
-        "williamboman/mason.nvim",
+        'williamboman/mason.nvim',
         config = function()
-            require("mason").setup()
+            require('mason').setup()
         end
     },
     {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
         dependencies = {
-            "williamboman/mason.nvim",
+            'williamboman/mason.nvim',
         },
         config = function()
-            require("mason-tool-installer").setup({
-                ensure_installed = { "lua-language-server", "black", "debugpy", "mypy", "pyright", "stylua" }
+            require('mason-tool-installer').setup({
+                ensure_installed = { 'lua-language-server', 'black', 'debugpy', 'mypy', 'pyright', 'stylua' }
             })
         end,
     },
 
     {
-        "williamboman/mason-lspconfig.nvim",
+        'williamboman/mason-lspconfig.nvim',
         dependencies = {
-            "williamboman/mason.nvim",
-            "WhoIsSethDaniel/mason-tool-installer.nvim",
+            'williamboman/mason.nvim',
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
         },
         config = function()
-            require("mason-lspconfig").setup({})
+            require('mason-lspconfig').setup({})
         end
     },
     {
-        "neovim/nvim-lspconfig",
+        'neovim/nvim-lspconfig',
         dependencies = {
-            "williamboman/mason-lspconfig.nvim",
-            "williamboman/mason.nvim",
+            'williamboman/mason-lspconfig.nvim',
+            'williamboman/mason.nvim',
         },
         config = function()
-            local lspconfig = require("lspconfig")
+            local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            local whichkey = require("which-key")
+            local whichkey = require('which-key')
             whichkey.add({
-                { "<leader>l", group = "LSP Code operation" }})
-            require("neodev").setup({})
+                { '<leader>l', group = 'LSP Code operation' }})
+            require('neodev').setup({})
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
-                ft = { "lua" },
+                ft = { 'lua' },
                 settings = {
                     Lua = {
                         completion = {
-                            callSnippet = "Replace"
+                            callSnippet = 'Replace'
                         }
                     }
                 }
             })
             lspconfig.pyright.setup({
                 capabilities = capabilities,
-                ft = { "python" },
+                ft = { 'python' },
             })
             vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover,                      { desc = 'Hover' })
             vim.keymap.set('n', '<leader>lD', vim.lsp.buf.declaration,                { desc = 'go to code declaration' })

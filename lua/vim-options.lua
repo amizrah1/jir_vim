@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- Text, Tabs and Indents
 vim.opt.shiftwidth     = 4              -- Set the number of space characters inserted for indentation.
@@ -24,7 +24,7 @@ vim.opt.clipboard      = 'unnamedplus'  -- Use system clipboard
 vim.opt.mouse          = 'a'            -- Enable mouse support     
 
 vim.keymap.set('n', '<middlemouse>','<leftmouse>"*p', { desc = 'enable paste on mouse cursor and not on nvim cursor' })
-vim.keymap.set('n', 'gg', "0gg",                      { desc = 'jump to first char in first line' })
+vim.keymap.set('n', 'gg', '0gg',                      { desc = 'jump to first char in first line' })
 vim.keymap.set('n', '<A-k>', ':bprev<CR>',            { desc = 'go to previous buffer' })
 vim.keymap.set('n', '<A-j>', ':bnext<CR>',            { desc = 'go to next buffer' })
 vim.keymap.set('n', '<A-Up>', ':bprev<CR>',           { desc = 'go to previous buffer' })
@@ -35,8 +35,8 @@ vim.keymap.set('v', '<C-C>', '"+y',                   { desc = 'copy to system c
 vim.keymap.set('n', '<leader>sp', '"+p',              { desc = 'paste from system clipboard' })
 vim.keymap.set('n', '+', '<C-W>+',                    { desc = 'increase split size' })
 vim.keymap.set('n', '_', '<C-W>-',                    { desc = 'decreset split size' })
-vim.keymap.set('n', '<A-S-Down>', ":m .+1<CR>==",     { desc = 'move current line down' })
-vim.keymap.set('n', '<A-S-up>',   ":m .-2<CR>==",     { desc = 'move current line up' })
+vim.keymap.set('n', '<A-S-Down>', ':m .+1<CR>==',     { desc = 'move current line down' })
+vim.keymap.set('n', '<A-S-up>',   ':m .-2<CR>==',     { desc = 'move current line up' })
 vim.keymap.set('v', '<A-S-Down>', ":m '>+1<CR>gv=gv", { desc = 'move current selection down' })
 vim.keymap.set('v', '<A-S-Up>',   ":m '<-2<CR>gv=gv", { desc = 'move current selection up' })
 vim.keymap.set('n', '|', ':nohlsearch<CR>',           { desc = 'turn off search highlight' })
@@ -47,14 +47,14 @@ vim.keymap.set('c', '<Bslash><Bslash>', "<C-R>=expand('%:p:h').'/'<CR>", { desc 
 
 -- Function to remove 'cro' from formatoptions
 local function remove_formatoptions()
-  vim.opt.formatoptions:remove("c")
-  vim.opt.formatoptions:remove("r")
-  vim.opt.formatoptions:remove("o")
+  vim.opt.formatoptions:remove('c')
+  vim.opt.formatoptions:remove('r')
+  vim.opt.formatoptions:remove('o')
 end
 
 -- Autocommand to apply the function for all file types
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
   callback = remove_formatoptions,
 })
 

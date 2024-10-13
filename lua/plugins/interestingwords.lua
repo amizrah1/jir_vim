@@ -1,5 +1,6 @@
 return {
     'Mr-LLLLL/interestingwords.nvim',
+    name = 'interestingwords',
     event = 'VeryLazy',
     config = function()
         require('interestingwords').setup {

@@ -16,7 +16,7 @@ return {
                 dapui.close()
             end
 --            dap.set_log_level = 'DEBUG'
-            local whichkey = require("which-key")
+            local whichkey = require('which-key')
             whichkey.add({
                 { '<leader>d', group = 'Debug options' }})
             vim.keymap.set('n', '<F5>',             function() require('dap').continue() end, { desc = 'run script with debugger' } )

@@ -1,5 +1,6 @@
 return {
     'folke/which-key.nvim',
+    name = 'whichkey',
     dependencies = {
         'echasnovski/mini.icons'
     },
