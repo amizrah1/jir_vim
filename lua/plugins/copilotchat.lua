@@ -14,10 +14,10 @@ return {
 			{ '<leader>c', group = 'Copilot Chat', mode = 'vn' },
 			{ '<leader>ca', group = 'Additional options', mode = 'vn' },
 			{ '<leader>cp', desc = 'System prompt' },
-			{ '<leader>cs', desc = 'Show selection' },
-			{ '<leader>cg', desc = 'Get diff' },
-			{ '<leader>cy', desc = 'Yank diff' },
-			{ '<leader>cd', desc = 'Show diff' },
+			{ '<leader>cas', desc = 'Show selection' },
+			{ '<leader>cag', desc = 'Get diff' },
+			{ '<leader>cay', desc = 'Yank diff' },
+			{ '<leader>cad', desc = 'Show diff' },
 		})
 		chat.setup(opts)
 	end,
@@ -45,16 +45,16 @@ return {
 				insert = '',
 			},
 			yank_diff = {
-				normal = '<leader>cy',
+				normal = '<leader>cay',
 			},
 			show_diff = {
-				normal = '<leader>cd',
+				normal = '<leader>cad',
 			},
 			show_system_prompt = {
-				normal = '<leader>cp',
+				normal = '<leader>cap',
 			},
 			show_user_selection = {
-				normal = '<leader>cs',
+				normal = '<leader>cas',
 			},
 		},
 	},
@@ -104,7 +104,7 @@ return {
 		},
 		-- Custom input for CopilotChat
 		{
-			'<leader>cai',
+			'<leader>cd',
 			function()
 				local input = vim.fn.input('Ask Copilot: ')
 				if input ~= '' then
@@ -142,7 +142,7 @@ return {
 		-- Clear buffer and chat history
 		{ '<leader>cal', '<cmd>CopilotChatReset<cr>', desc = 'CopilotChat - Clear buffer and chat history' },
 		-- Toggle Copilot Chat Vsplit
-		{ '<leader>cav', '<cmd>CopilotChatToggle<cr>', desc = 'CopilotChat - Toggle' },
+		{ '<leader>cc', '<cmd>CopilotChatToggle<cr>', desc = 'CopilotChat - Toggle' },
 		-- Copilot Chat Models
 		{ '<leader>ca?', '<cmd>CopilotChatModels<cr>', desc = 'CopilotChat - Select Models' },
 	},

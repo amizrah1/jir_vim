@@ -52,9 +52,8 @@ local function remove_formatoptions()
   vim.opt.formatoptions:remove('o')
 end
 
+vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, { pattern = '*.v', command = 'set filetype=systemverilog', group = vim.api.nvim_create_augroup('SystemVerilogFiletype', { clear = true }) })
+
 -- Autocommand to apply the function for all file types
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = '*',
-  callback = remove_formatoptions,
-})
+vim.api.nvim_create_autocmd('FileType', { pattern = '*', callback = remove_formatoptions, })
 
