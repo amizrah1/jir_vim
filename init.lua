@@ -13,3 +13,5 @@ if vim.fn.has("termguicolors") == 1 then
 end
 
 vim.cmd.colorscheme("melange")
+--vim.cmd.colorscheme("alchemist")
+

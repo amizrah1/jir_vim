@@ -63,7 +63,7 @@ let highlights = {
 \ 'Visual': {'fg': 'NONE', 'bg': a.visual_color},
 \ 'VertSplit': {'fg': a.ui},
 \ 'WinSeparator': {'fg': a.ui},
-\ 'LineNr': {'fg': a.ui},
+\ 'LineNr': {'fg': a.ui, 'bg': a.bg},
 \ 'CursorLineNr': {'fg': c.yellow},
 \ 'Folded': {'fg': a.com, 'bg': d.cyan},
 \ 'FoldColumn': 'LineNr',
