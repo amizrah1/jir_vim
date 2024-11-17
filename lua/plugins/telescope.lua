@@ -35,6 +35,7 @@ return {
                 { '<leader>f', group = 'Telescope' },
             })
             vim.keymap.set('n', '<leader>fg', ':lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>', { desc = 'telescope grep in files' })
+            vim.keymap.set('n', '<leader>fk', '<cmd>Telescope help_tags<cr>' , {desc = 'Help on tags'})
         end
     }
 }
