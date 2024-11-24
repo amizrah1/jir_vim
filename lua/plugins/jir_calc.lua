@@ -10,11 +10,11 @@ return {
         })
         local whichkey = require('which-key')
         whichkey.add({{ '<leader>m', group = 'Mahshevon' }, mode='vn'})
-        vim.keymap.set('n', '<leader>mm',       function() require('jir_calc.window').open_window() end , { desc = 'Jir Calculator' })
-        vim.keymap.set('v', '<leader>ml',       function() require('jir_calc.command').windowless(true) end , { desc = 'Jir Calculator' })
-        vim.keymap.set('n', '<leader>ml',       function() require('jir_calc.command').windowless(false) end , { desc = 'Jir Calculator' })
-        vim.keymap.set('v', '<leader>md',       function() require('jir_calc.command').debug() end , { desc = 'Jir Calculator' })
-        vim.keymap.set('n', '<leader>md',       function() require('jir_calc.command').debug() end , { desc = 'Jir Calculator' })
+        vim.keymap.set('n', '<leader>mm',       function() require('jir_calc.window').open_window()      end , { desc = 'Launch Jir Calculator' })
+        vim.keymap.set('v', '<leader>ml',       function() require('jir_calc.command').windowless(true)  end , { desc = 'run Jir Calculator on selected lines' })
+        vim.keymap.set('n', '<leader>ml',       function() require('jir_calc.command').windowless(false) end , { desc = 'run Jir Calculator on current lines' })
+        vim.keymap.set('v', '<leader>md',       function() require('jir_calc.command').debug()           end , { desc = 'Jir Calculator debug' })
+        vim.keymap.set('n', '<leader>md',       function() require('jir_calc.command').debug()           end , { desc = 'Jir Calculator debug' })
     end
 }
 
